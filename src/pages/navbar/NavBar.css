@@ -1,0 +1,38 @@
+/* Estilo para la navegación */
+nav {
+    background-color: lightblue; /* Cambia el color de fondo según tus preferencias */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilo para la lista */
+  ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Hace que los elementos de la lista se alineen en línea */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Estilo para los elementos de la lista */
+  li {
+    padding: 2em; /* Espaciado entre elementos de la lista, ajusta según tus preferencias */
+    text-align: center;
+  }
+  
+  /* Estilo para los enlaces */
+  .link {
+    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+    color: black; /* Cambia el color del texto según tus preferencias */
+    font-weight: bold; /* Añade negrita al texto */
+    font-size: 16px; /* Ajusta el tamaño del texto según tus preferencias */
+  }
+  
+  /* Estilo para los enlaces al pasar el mouse */
+  .link:hover {
+    text-decoration: underline; /* Añade subrayado al pasar el mouse sobre el enlace */
+  }

@@ -1,4 +1,5 @@
 
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { AboutUs } from './pages/about-us/AboutUs';
 import { Footer } from './pages/footer/Footer';
@@ -10,9 +11,11 @@ function App() {
   return (
     <div className="App">
         <NavBar/>
-        <Home/>
-        <Products/>
-        <AboutUs/>
+        <Routes>
+          <Route index element ={<Home/>}/>
+          <Route path="products" element={<Products/>}/>
+          <Route path="about-us" element={<AboutUs/>}/>
+        </Routes>
         <Footer/>
     </div>
   );

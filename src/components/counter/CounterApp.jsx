@@ -1,56 +1,44 @@
 import { useState } from "react";
-import { Button } from "../Button";
+import { ButtonGroup, Button, Typography, Box } from "@mui/material";
 
 const CounterApp = () => {
-
-  //HOOK USESTATE
-
+  //Hook UseState
   const [counter, setCounter] = useState(0);
 
   const handleIncrement = () => {
-    console.log("Has pulsado el botón de incrementar");
-    setCounter(counter => counter + 1); // Utiliza la forma funcional de setCounter
-    // La línea anterior asegura que estás utilizando el estado anterior para calcular el nuevo estado
-    // y evita problemas relacionados con el estado siendo asíncrono.
-  
-    // Ahora, si registras counter, verás el valor actualizado
-    console.log(counter); // Esto registrará el valor anterior (0)
+    setCounter(counter + 1);
   };
 
   const handleDecrement = () => {
-    console.log("Has pulsado el botón de decrementar");
-    setCounter((counter) => counter - 1); // Utiliza la forma funcional de setCounter
-    // La línea anterior asegura que estás utilizando el estado anterior para calcular el nuevo estado
-    // y evita problemas relacionados con el estado siendo asíncrono.
-  
-    // Ahora, si registras counter, verás el valor actualizado
-    console.log(counter); // Esto registrará el valor anterior (0)
+    setCounter(counter - 1);
   };
 
-  const handleRestart = () => {
-    console.log("Has pulsado el botón de resetear");
-    setCounter(() => 0); // Utiliza la forma funcional de setCounter
-    // La línea anterior asegura que estás utilizando el estado anterior para calcular el nuevo estado
-    // y evita problemas relacionados con el estado siendo asíncrono.
-  
-    // Ahora, si registras counter, verás el valor actualizado
-    console.log(counter); // Esto registrará el valor anterior (0)
-  };
+  // Agregar la funcionalidad para el botón decrement y reset
 
   const counterComponent = (
-    <div className="counter-container">
-      <h2 id="counter">{counter}</h2>
+    <Box p={2} m={2} bgcolor={ {xs:"primary.light"} } >
+      {/* <h2 id="counter"> {counter} </h2> */}
+      <Typography
+        sx={{ fontSize: { xs: "2rem", sm: "4rem", md: "6rem", lg: "8rem" } }}
+        component="p"
+      >
+        {counter}
+      </Typography>
       <div id="buttons">
-      <Button onClick={handleIncrement} >Add</Button>
-        <Button onClick={handleDecrement} >Less</Button>
-        <button onClick={handleRestart} id="restart" type="button">
-          Restart
-        </button>
+        <ButtonGroup
+          variant="contained"
+          aria-label="outlined primary button group"
+        >
+          <Button onClick={handleIncrement}>Add</Button>
+          <Button onClick={handleDecrement}>Less</Button>
+          <Button onClick={() => setCounter(0)}>Restart</Button>
+        </ButtonGroup>
       </div>
-    </div>
+    </Box>
   );
 
   return counterComponent;
 };
 
 export default CounterApp;
+
