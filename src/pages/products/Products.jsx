@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import CounterApp from "../../components/counter/CounterApp"
 
 const products = [
@@ -30,7 +30,7 @@ const products = [
 
 export const Products = () => {
   return (
-    <div>
+    <Container maxWidth="md">
       {  products.map( ({title, img, price,sku})=> 
         <Box key={sku}>
           <Typography variant="h3" >{title}</Typography>
@@ -38,6 +38,6 @@ export const Products = () => {
           <CounterApp />
         </Box> 
         )}
-    </div>
+    </Container>
   )
 }
